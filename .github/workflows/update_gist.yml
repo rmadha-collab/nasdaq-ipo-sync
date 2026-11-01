@@ -38,8 +38,8 @@ jobs:
           seen_keys = set()
           base_payload = None
 
-          for month_str in months_to_fetch:
-              resp = requests.get(url, params={"date": month_str}, headers=headers, timeout=20)
+          for month_str in [None] + months_to_fetch:
+              resp = requests.get(url, params={"date": month_str} if month_str else None, headers=headers, timeout=20)
               resp.raise_for_status()
               month_data = resp.json()
               if base_payload is None:
