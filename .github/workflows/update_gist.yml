@@ -1,8 +1,6 @@
 name: Update Nasdaq IPO Gist
 
 on:
-  schedule:
-    - cron: '45 */2 * * *'  # Every 2 hours at :45 UTC (15m pre-hour buffer, avoids :00 queue spike)
   workflow_dispatch:
 
 jobs:
